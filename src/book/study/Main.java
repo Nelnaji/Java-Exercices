@@ -46,9 +46,6 @@ public class Main {
 
         do {
 
-            for (int i = 0; i < 5; i++) {
-                System.out.print(" " + plateau[i] + " ");
-            }
 
             System.out.println("Pour bouger votre pion a gauche ou a droite veuillez introduire g ou d, pour arreter de jouer introduisez la touche e");
 
@@ -67,6 +64,9 @@ public class Main {
                 keepPlaying = false;
             }
 
+            for (int i = 0; i < 5; i++) {
+                System.out.print(" " + plateau[i] + " ");
+            }
         } while (keepPlaying);
 
 
