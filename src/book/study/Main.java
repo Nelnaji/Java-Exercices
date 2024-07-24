@@ -46,17 +46,26 @@ public class Main {
 
         do {
 
-
-            System.out.println("Pour bouger votre pion a gauche ou a droite veuillez introduire g ou d, pour arreter de jouer introduisez la touche e");
+            System.out.println("Pour bouger votre pion a gauche ou a droite veuillez taper G ou D et E pour arreter de jouer");
 
             System.out.print("> vous voulez bouger g / d ?");
 
-            playerMove = sc.nextLine();
+            playerMove = sc.nextLine().toLowerCase();
+
             if (playerMove.equals("d")) {
-                plateau[pionPositionRandom] = plateau[pionPositionRandom--];
+                if (plateau[pionPositionRandom] == plateau.length - 1) {
+                    plateau[pionPositionRandom] = 0;
+                } else {
+                    plateau[pionPositionRandom] = plateau[pionPositionRandom++];
+                }
 
             } else if (playerMove.equals("g")) {
-                plateau[pionPositionRandom] = plateau[pionPositionRandom++];
+
+                if (plateau[pionPositionRandom] == 0) {
+                    plateau[pionPositionRandom] = plateau.length - 1;
+                } else {
+                    plateau[pionPositionRandom] = plateau[pionPositionRandom--];
+                }
 
             }
 
@@ -69,6 +78,7 @@ public class Main {
             }
         } while (keepPlaying);
 
+        System.out.println(plateau.length);
 
     }
 }
