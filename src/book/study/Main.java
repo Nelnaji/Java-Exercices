@@ -7,23 +7,27 @@ public class Main {
 
 
     // this is a class
-/*    public static void printItems(int whatever) {
+    public static void boardGene0rator(int boardSize) {
+
+//        for (int i = 0; i < boardSize; i++) {
+//
+//            System.out.print( " " + i + " ");
+//
+//            for (int j = 0; j < boardSize; j++) {
+//                System.out.print( " " + j + " ");
+//
+//
+//            }
+//        }
 
 
-
-
-
-        for (int i = 0; i < whatever; i++) {
-            System.out.println(i);
-
-        }
-
-
-    }*/
+    }
 
 
     // this is the main app that will be executed
     public static void main(String[] args) {
+
+
         Scanner sc = new Scanner(System.in);
         boolean keepPlaying = true;
         String playerMove;
@@ -35,18 +39,19 @@ public class Main {
         int pionPositionRandom = randomizer.nextInt(0, 5);
 
 
-        int[] plateau = new int[5];
+        String[] plateau = new String[5];
 
         // place le pion de manière aléatoire
-        plateau[pionPositionRandom] = 1;
+        plateau[pionPositionRandom] = "♙";
 
 
         // Affichage du plateau dans la console.
 
 
         do {
-
-            for (int i = 0; i < 5; i++) {
+            
+        // boardGenerator
+            for (int i = 0; i < plateau.length; i++) {
                 System.out.print(" " + plateau[i] + " ");
             }
 
